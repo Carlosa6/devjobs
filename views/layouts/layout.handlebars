@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css" integrity="sha256-yebzx8LjuetQ3l4hhQ5eNaOxVLgqaY1y8JcrXuJrAOg=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>{{nombrePagina}}</title>
+</head>
+<body>
+    
+    <div class="nombre-sitio contenedor">
+        <h1>
+            <a href="/">DevJobs</a>
+        </h1>
+
+        {{#if barra}}
+            
+            <div class="buscador">
+                <form action="">
+                    <input type="text" class="buscar">
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
+
+        {{/if}}
+
+        {{#if cerrarSesion}}
+            <div class="cerrar-sesion">
+                <p>Hola <b>{{nombre}}</b></p>
+                <a href="/administracion">Administración</a>
+                <a href="/cerrar-sesion">Cerrar Sesión</a>
+            </div>
+        {{/if}}
+
+    </div>
+
+    <header class="site-header contenedor separador">
+        <h2>{{nombrePagina}}</h2>
+
+        {{#if tagline}}
+            <p class="tagline">{{tagline}}</p>
+        {{/if}}
+
+        {{#if boton}}
+            <a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Vacante</a>
+        {{/if}}
+
+    </header>
+
+    <div class="contenido-principal contenedor">
+        {{> mensajes}}
+
+        {{{body}}}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js" integrity="sha256-2D+ZJyeHHlEMmtuQTVtXt1gl0zRLKr51OCxyFfmFIBM=" crossorigin="anonymous"></script>
+    <script src="/dist/bundle.js"></script>
+</body>
+</html>

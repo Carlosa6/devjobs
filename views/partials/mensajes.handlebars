@@ -1,0 +1,27 @@
+{{#if success_msg}}
+    <div class="correcto alerta">
+        {{success_msg}}
+    </div>
+    
+{{/if}}
+
+{{#if error_msg}}
+    <div class="error alerta">
+        {{error_msg}}
+    </div>
+    
+{{/if}}
+
+{{#if error}}
+    <div class="error alerta">
+        {{error}}
+    </div>
+{{/if}}
+
+{{#each errors}}
+
+    <div class="error alerta">
+        {{text}}
+    </div>
+
+{{/each}}
